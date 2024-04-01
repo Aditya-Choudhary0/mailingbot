@@ -25,7 +25,7 @@ export const Login = () => {
             <h2 className="text-white text-2xl font-semibold">Create a new account</h2>
             <button 
               onClick={handleGoogleSignUp}
-              className="w-full flex items-center border border-solid border-gray-600 rounded-md p-2 gap-2 bg-gradient-to-t from-gray-900 to-gray-800 hover:bg-gray-800"
+              className="w-full flex items-center justify-center border border-solid border-gray-600 rounded-md p-2 gap-2 bg-gradient-to-t from-gray-900 to-gray-800 hover:bg-gray-800"
               disabled={loading}
             >
               <FcGoogle />
