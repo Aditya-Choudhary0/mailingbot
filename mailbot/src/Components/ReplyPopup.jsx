@@ -92,7 +92,7 @@ export const ReplyPopup = ({ threadId, token, showreplyBox }) => {
                             name="to"
                             value={data.to}
                             onChange={handleChange}
-                            className="border-b border-gray-300 dark:border-gray-600 focus:outline-none w-full py-2 px-4 bg-transparent dark:text-white"
+                            className= {`border-b ${colorMode === 'light' ? 'border-gray-300 bg-grey-200 text-black' : 'bg-gray-700 border-gray-900 text-grey-100 '} focus:outline-none w-full py-2 px-4 bg-transparent`}
                             placeholder="to: jeane@icloud.com"
                         />
                         <input
@@ -100,7 +100,7 @@ export const ReplyPopup = ({ threadId, token, showreplyBox }) => {
                             name="from"
                             value={data.from}
                             onChange={handleChange}
-                            className="border-b border-gray-300 dark:border-gray-600 focus:outline-none w-full py-2 px-4 bg-transparent dark:text-white"
+                            className= {`border-b ${colorMode === 'light' ? 'border-gray-300 bg-grey-200 text-black' : 'bg-gray-700 border-gray-900 text-grey-100 '} focus:outline-none w-full py-2 px-4 bg-transparent`}
                             placeholder="from: peter@reachinbox.com"
                         />
                         <input
@@ -108,14 +108,14 @@ export const ReplyPopup = ({ threadId, token, showreplyBox }) => {
                             name="subject"
                             value={data.subject}
                             onChange={handleChange}
-                            className="focus:outline-none w-full py-2 px-4 bg-transparent dark:text-white"
+                            className={`focus:outline-none w-full py-2 px-4 bg-transparent ${colorMode === 'light' ? 'text-black' : 'text-grey-100 '}`}
                             placeholder="Warmup Welcome"
                         />
                         <textarea
                             name="body"
                             value={data.body}
                             onChange={handleChange}
-                            className="resize-none h-4/6 border border-gray-300 dark:border-gray-600 focus:outline-none w-full py-2 px-4 bg-transparent dark:text-white"
+                            className= {`resize-none h-4/6 border ${colorMode === 'light' ? 'border-gray-300 bg-grey-200 text-black' : 'bg-gray-700 border-gray-900 text-grey-100 '} focus:outline-none w-full py-2 px-4 bg-transparent`}
                             placeholder="Hi Jeanne,"
                         />
                     </div>
