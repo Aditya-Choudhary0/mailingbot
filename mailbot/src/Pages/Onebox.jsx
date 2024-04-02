@@ -16,12 +16,11 @@ const resetList = async(token) =>{
       })
       return res;
     }catch(err){
-      throw new Error("Failed to fetch data.");
+      console.log("data not fetched")
     }
 }
 
 const fetchData = async (token) => {
-     
   try {
     const res = await axios.get('https://hiring.reachinbox.xyz/api/v1/onebox/list', {
       headers: {
@@ -63,6 +62,10 @@ export const Onebox = ()=> {
       }
 
     },[token]);
+
+    useEffect(() => {
+      resetList(token);
+    }, []);
 
   return (
     <Box>

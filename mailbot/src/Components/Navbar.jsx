@@ -1,5 +1,7 @@
 import { useColorMode } from "@chakra-ui/react";
-import { MdOutlineDarkMode, MdLightMode } from "react-icons/md";
+import { FiMoon } from "react-icons/fi";
+import { BsCircleFill } from "react-icons/bs";
+import { MdOutlineWbSunny } from "react-icons/md";
 
 export const Navbar = () => {
     const { colorMode, toggleColorMode } = useColorMode();
@@ -16,12 +18,21 @@ export const Navbar = () => {
                         onChange={toggleColorMode}
                         checked={colorMode === 'dark'}
                     />
-                    <label htmlFor="change-theme" className={`flex items-center rounded-full w-16 border border-solid ${colorMode === 'light' ? 'bg-gray-200 justify:end' : 'bg-gray-800 justify:start'} border-gray-300 px-3 py-2 cursor-pointer`}>
-                        <span className={`flex items-center p-1 absolute ml-2 left-0 bg-white w-6 h-6 rounded-full shadow-md transition-transform ${colorMode === 'dark' ? 'transform translate-x-full' : ''}`}> {colorMode === 'light'? <MdLightMode className="text-yellow-500" />:<MdOutlineDarkMode className="text-yellow-500" />}</span>
-                        {colorMode === 'light' ? <MdOutlineDarkMode className="text-yellow-500" />:<MdLightMode className="text-yellow-500" />}
-                        {/* {colorMode === 'dark' && <MdLightMode className="text-yellow-500" />} */}
+                    <label htmlFor="change-theme" className={`mr-6 flex items-center justify-between ${colorMode === 'dark' ? 'bg-black' : 'bg-gray-200'} border border-solid ${colorMode === 'dark' ? 'border-gray-800' : 'border-gray-300'} rounded-full p-1 px-3 py-2 cursor-pointer`}>
+                        {(colorMode === 'dark') ? (
+                            <>
+                                <BsCircleFill className="w-4 h-4 text-white-300 mr-1" />
+                                <MdOutlineWbSunny className="w-4 h-4 ml-1 text-yellow-400" />
+                            </>
+                        ) : (
+                            <>
+                                <FiMoon className="w-4 h-4 text-yellow-400 mr-1" />
+                                <BsCircleFill className="w-4 h-4 ml-1 text-white" />
+                            </>
+                        )}
                     </label>
                 </div>
+
                 <select className={`border border-solid rounded px-4 py-2 ${colorMode === 'light' ? 'bg-gray-200' : 'bg-gray-800'} border-gray-300 focus:outline-none`}>
                     <option value="tims_workspace">Tim's Workspace</option>
                 </select>

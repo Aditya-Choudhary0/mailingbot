@@ -89,10 +89,9 @@ export const EmailDetail = () => {
     };
 
     const handleDeleteConfirmation = () => {
-
         const title = "Delete Confirmation";
         const description = "Are you sure you want to delete this email?";
-
+    
         toast({
             title,
             description,
@@ -100,17 +99,24 @@ export const EmailDetail = () => {
             duration: 2000,
             isClosable: true,
             render: ({ onClose }) => (
-                <div>
-                    <h3>{title}</h3>
-                    <p>{description}</p>
-                    <button onClick={handleDelete} className={`border border-solid rounded px-4 py-2 focus:outline-none mr-4 bg-red-500 text-white`}>
-                        OK
-                    </button>
-                    <button onClick={onClose} className="border border-solid rounded px-4 py-2 focus:outline-none bg-gray-500 text-white">Cancel</button>
+                <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-60">
+                    <div className="bg-gradient-to-b from-[#141517] to-[#232528] p-8 flex flex-col items-center justify-center  rounded-lg w-1/3">
+                        <h2 className="text-lg text-white font-bold mb-4">{title}</h2>
+                        <p className="text-[#E8E8E8] mb-4">{description}</p>
+                        <div className="flex justify-center">
+                            <button onClick={onClose} className="bg-black text-white px-4 py-2 rounded mr-4">
+                                Cancel
+                            </button>
+                            <button onClick={()=>{handleDelete();onClose()}} className="bg-gradient-to-b from-[#FA5252] to-[#A91919] text-white px-4 py-2 rounded">
+                                Delete
+                            </button>
+                        </div>
+                    </div>
                 </div>
             )
         });
     };
+    
 
     return (
         <div className={`text-left ${colorMode === 'dark' ? 'bg-black text-white' : 'bg-white text-gray-900'}`}>
