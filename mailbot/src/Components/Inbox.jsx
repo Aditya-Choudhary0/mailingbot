@@ -1,12 +1,27 @@
 import { MdRefresh } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export const getDate = (data) => {
     let date = new Date(data);
     let temp = date.toDateString().split(" ");
     return `${temp[1]} ${temp[2]}`;
 };
+
+// const resetList = async(token) =>{
+//     try{
+//       const res = await axios.get(`https://hiring.reachinbox.xyz/api/v1/onebox/reset`,{
+//         headers: {
+//           Authorization: `Bearer ${token}`,
+//           "Content-Type": 'application/json'
+//         },
+//       })
+//       return res;
+//     }catch(err){
+//       console.log("data not fetched")
+//     }
+// }
 
 export const Inbox = ({ emails, colorMode }) => {
     const navigate = useNavigate();

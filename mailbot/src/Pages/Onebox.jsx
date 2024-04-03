@@ -63,9 +63,9 @@ export const Onebox = ()=> {
 
     },[token]);
 
-    useEffect(() => {
-      resetList(token);
-    }, []);
+    // useEffect(() => {
+    //   resetList(token);
+    // }, []);
 
   return (
     <Box>
@@ -73,9 +73,9 @@ export const Onebox = ()=> {
         {/* sidebar  */}
         <Sidebar contentName={contentName} setContentName={setContentName} />
         {/* reaamining content which is navbar with theme toggle and the main mail contents */}
-        <Box w="95%">
+        <Box w="96%">
             <Navbar />
-            <Content contentName={contentName}  data={data} />
+            <Content contentName={contentName}  data={data}/>
         </Box>
       </Flex>
     </Box>
