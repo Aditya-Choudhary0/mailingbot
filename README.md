@@ -1,6 +1,6 @@
 # mailingbot
 
-A simple web application to handle received emails and to reply or send email.
+A simple web application to handle received emails and to reply or send emails.
 
 ### Deployed Link 
 
@@ -84,6 +84,11 @@ https://onebox-mailbot.netlify.app/
 7. Delete Thread - Pressing 'ctrl+d' opens a dialog box. Clicking 'Delete' will remove the current thread. <hr>
 
    ![confirmation](https://github.com/Aditya-Choudhary0/mailingbot/assets/113030961/fce1f127-8673-4f9d-ace4-b73669bde99b)
+
+
+## Video Presentation of the web application:
+
+https://www.loom.com/share/729a192775dc4ea68d6db6e0f8127f9d?sid=94e6ee67-76aa-44cb-bf46-d7b38eb21583
 
 
 ## How to Contribute
